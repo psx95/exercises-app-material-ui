@@ -20,14 +20,23 @@ export default class extends Component {
     );
   }
 
+  handleCategoryChange = category => {
+    this.setState({
+      category
+    });
+  }
+
   render() {
     const exercises = this.getExercisesByMuscle();
+    const { category } = this.state;
     return <Fragment>
       <Header />
 
       <Exercises exercises={exercises} />
 
-      <Footer muscles={muscles} />
+      <Footer muscles={muscles}
+        onSelect={this.handleCategoryChange}
+        category={category} />
     </Fragment>;
   }
 }
