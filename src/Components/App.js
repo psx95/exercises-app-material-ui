@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
+import { Header, Footer } from './Layouts';
+import Exercises from './Exercises';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Hi from App.js</h1>
-    </div>
-  );
+export default class extends Component {
+  render() {
+    return <Fragment>
+      <Header />
+
+      <Exercises />
+
+      <Footer />
+    </Fragment>;
+  }
 }
-
-export default App;
