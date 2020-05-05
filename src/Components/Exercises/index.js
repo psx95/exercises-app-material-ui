@@ -7,10 +7,12 @@ const styles = {
     Paper: { padding: 20, marginTop: 10, marginBottom: 10 }
 };
 
-export default props =>
+export default ({ exercises }) =>
     <Grid container>
         <Grid item sm>
-            <LeftPane styles={styles.Paper} />
+            <LeftPane
+                styles={styles.Paper}
+                data={exercises} />
         </Grid>
         <Grid item sm>
             <RightPane styles={styles.Paper} />
