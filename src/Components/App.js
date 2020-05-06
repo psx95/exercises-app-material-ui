@@ -26,13 +26,24 @@ export default class extends Component {
     });
   }
 
+  handleExerciseChange = id => {
+    const newEx = this.state.exercises.find(ex => ex.id === id);
+    this.setState({
+      selectedExercise: newEx
+    });
+  }
+
   render() {
     const exercises = this.getExercisesByMuscle();
-    const { category } = this.state;
+    const { category, selectedExercise } = this.state;
     return <Fragment>
       <Header />
 
-      <Exercises exercises={exercises} category={this.state.category} />
+      <Exercises
+        exercises={exercises}
+        category={this.state.category}
+        onExerciseSelected={this.handleExerciseChange}
+        selectedExercise={selectedExercise} />
 
       <Footer muscles={muscles}
         onSelect={this.handleCategoryChange}

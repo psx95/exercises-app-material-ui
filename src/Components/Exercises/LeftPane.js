@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Paper, Typography, List, ListItem, ListItemText } from '@material-ui/core';
 
-export default ({ styles, data, category }) =>
+export default ({ styles, data, category, onSelect }) =>
     <Paper style={styles}>
         {data.map(([group, exercises]) =>
             !category || category === group ?
@@ -11,9 +11,13 @@ export default ({ styles, data, category }) =>
                         {group}
                     </Typography>
                     <List component="ul">
-                        {exercises.map(({ title }) =>
-                            <ListItem button>
-                                <ListItemText primary={title} />
+                        {exercises.map(({ id, title }) =>
+                            <ListItem
+                                key={id}
+                                onClick={() => onSelect(id)}
+                                button>
+                                <ListItemText
+                                    primary={title} />
                             </ListItem>
                         )}
                     </List>

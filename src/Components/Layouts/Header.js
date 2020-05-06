@@ -1,11 +1,10 @@
 import React from 'react';
-import { AppBar, Toolbar, IconButton, Typography, Button } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
+import { AppBar, Toolbar, Typography } from '@material-ui/core';
 
 export default props =>
     <AppBar position="static">
         <Toolbar>
-            <Typography variant="headline" color="inherit">
+            <Typography variant="body1" color="inherit">
                 Exercises Database
             </Typography>
         </Toolbar>
