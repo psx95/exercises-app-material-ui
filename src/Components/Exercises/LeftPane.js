@@ -5,7 +5,8 @@ export default ({ styles, data, category, onSelect }) =>
     <Paper style={styles}>
         {data.map(([group, exercises]) =>
             !category || category === group ?
-                <Fragment>
+                <Fragment
+                    key={group}>
                     <Typography style={{ textTransform: 'capitalize' }}
                         variant='body1'>
                         {group}
