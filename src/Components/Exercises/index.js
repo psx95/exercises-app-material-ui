@@ -7,12 +7,13 @@ const styles = {
     Paper: { padding: 20, marginTop: 10, marginBottom: 10, height: 500, overflowY: 'auto' }
 };
 
-export default ({ exercises }) =>
+export default ({ exercises, category }) =>
     <Grid container>
         <Grid item sm>
             <LeftPane
                 styles={styles.Paper}
-                data={exercises} />
+                data={exercises}
+                category={category} />
         </Grid>
         <Grid item sm>
             <RightPane styles={styles.Paper} />
