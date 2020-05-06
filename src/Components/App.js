@@ -34,12 +34,17 @@ export default class extends Component {
   }
 
   handleExerciseCreate = exercise => {
-    console.log(JSON.stringify(exercise) + " received");
     this.setState(({ exercises }) => ({
       exercises: [
         ...exercises,
         exercise
       ]
+    }));
+  }
+
+  handleExerciseDelete = exerciseId => {
+    this.setState(({ exercises }) => ({
+      exercises: exercises.filter(ex => ex.id !== exerciseId)
     }));
   }
 
@@ -55,6 +60,7 @@ export default class extends Component {
         exercises={exercises}
         category={this.state.category}
         onExerciseSelected={this.handleExerciseChange}
+        onExerciseDeleted={this.handleExerciseDelete}
         selectedExercise={selectedExercise} />
 
       <Footer muscles={muscles}
