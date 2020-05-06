@@ -37,8 +37,10 @@ export default withStyles(styles)(class extends Component {
 
     handleSubmit = () => {
         const { exercise } = this.state;
-        console.log(JSON.stringify(exercise));
-        this.props.onExerciseCreate(exercise);
+        this.props.onExerciseCreate({
+            ...exercise,
+            id: exercise.title.toLowerCase().replace(/ /g, '-')
+        });
         this.setState({
             open: false,
             exercise: {
