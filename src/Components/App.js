@@ -33,11 +33,23 @@ export default class extends Component {
     });
   }
 
+  handleExerciseCreate = exercise => {
+    console.log(JSON.stringify(exercise) + " received");
+    this.setState(({ exercises }) => ({
+      exercises: [
+        ...exercises,
+        exercise
+      ]
+    }));
+  }
+
   render() {
     const exercises = this.getExercisesByMuscle();
     const { category, selectedExercise } = this.state;
     return <Fragment>
-      <Header />
+      <Header
+        muscles={muscles}
+        createExercise={this.handleExerciseCreate} />
 
       <Exercises
         exercises={exercises}
