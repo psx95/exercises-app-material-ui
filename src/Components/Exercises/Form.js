@@ -47,7 +47,8 @@ export default withStyles(styles)(class extends Component {
 
     render() {
         const { title, description, muscles } = this.state;
-        const { classes, categories } = this.props;
+        const { classes, categories, exercise } = this.props;
+        const buttonText = exercise ? "Update" : "Create";
 
         return <form>
             <TextField
@@ -88,7 +89,7 @@ export default withStyles(styles)(class extends Component {
                 margin="normal" />
             <br />
             <Button color="primary" variant="contained" onClick={this.handleSubmit}>
-                Create
+                {buttonText}
             </Button>
         </form>
     }
