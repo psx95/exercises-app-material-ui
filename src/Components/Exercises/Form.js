@@ -34,7 +34,10 @@ export default withStyles(styles)(class extends Component {
             description: '',
             muscles: ''
         });
-        this.props.postSubmitTask();
+        const { postSubmitTask } = this.props;
+        if (postSubmitTask) {
+            postSubmitTask();
+        }
     }
 
     render() {
