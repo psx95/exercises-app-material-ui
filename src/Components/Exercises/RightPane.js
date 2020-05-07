@@ -8,7 +8,8 @@ export default ({ styles, exercise, editMode, muscles, onSubmit }) => {
 
     return editMode ?
         <Form categories={muscles}
-            onSubmit={onSubmit} />
+            onSubmit={onSubmit}
+            exercise={exercise} />
         : <Fragment>
             <Paper style={styles}>
                 <Typography

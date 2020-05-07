@@ -9,10 +9,15 @@ const styles = theme => ({
 });
 
 export default withStyles(styles)(class extends Component {
-    state = {
-        title: '',
-        description: '',
-        muscles: ''
+    state = this.getInitialState();
+
+    getInitialState() {
+        const { exercise } = this.props;
+        return exercise ? exercise : {
+            title: '',
+            description: '',
+            muscles: ''
+        }
     }
 
     handleExerciseChange = name => event => {
