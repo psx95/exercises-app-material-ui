@@ -12,12 +12,24 @@ export default withStyles(styles)(class extends Component {
     state = this.getInitialState();
 
     getInitialState() {
+        // using props this way is an anti pattern
+        // since we extract from props, our state will not update if the props get updated.
+        // in this case this is useful to us since its a controlled compnent and we want the Form
+        // to be responsible for its own state.
         const { exercise } = this.props;
         return exercise ? exercise : {
             title: '',
             description: '',
             muscles: ''
         }
+    }
+
+    // Using this lifecycle method we manually update out state whenever the props received by this 
+    // component updates.
+    componentWillReceiveProps({ exercise }) {
+        this.setState({
+            ...exercise
+        });
     }
 
     handleExerciseChange = name => event => {
