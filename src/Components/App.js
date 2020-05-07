@@ -29,7 +29,8 @@ export default class extends Component {
   handleExerciseChange = id => {
     const newEx = this.state.exercises.find(ex => ex.id === id);
     this.setState({
-      selectedExercise: newEx
+      selectedExercise: newEx,
+      editMode: false
     });
   }
 
