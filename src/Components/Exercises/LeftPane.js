@@ -8,9 +8,9 @@ import {
     ListItemSecondaryAction,
     IconButton
 } from '@material-ui/core';
-import { Delete } from '@material-ui/icons';
+import { Delete, Edit } from '@material-ui/icons';
 
-export default ({ styles, data, category, onSelect, onDelete }) =>
+export default ({ styles, data, category, onSelect, onDelete, onEdit }) =>
     <Paper style={styles}>
         {data.map(([group, exercises]) =>
             !category || category === group ?
@@ -28,6 +28,9 @@ export default ({ styles, data, category, onSelect, onDelete }) =>
                                 button>
                                 <ListItemText primary={title} />
                                 <ListItemSecondaryAction>
+                                    <IconButton>
+                                        <Edit onClick={() => onEdit(id)} />
+                                    </IconButton>
                                     <IconButton>
                                         <Delete onClick={() => onDelete(id)} />
                                     </IconButton>

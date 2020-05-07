@@ -34,6 +34,7 @@ export default class extends Component {
   }
 
   handleExerciseCreate = exercise => {
+    console.log("Creating exercise " + JSON.stringify(exercise));
     this.setState(({ exercises }) => ({
       exercises: [
         ...exercises,
@@ -48,6 +49,22 @@ export default class extends Component {
     }));
   }
 
+  handleExerciseEdit = exerciseId => {
+    this.setState(({ exercises }) => ({
+      selectedExercise: exercises.find(ex => ex.id === exerciseId),
+      editMode: true
+    }));
+  }
+
+  handleEdit = exercise => {
+    this.setState(({ exercises }) => ({
+      exercises: [
+        ...exercises.filter(ex => ex.id !== exercise.id),
+        exercise
+      ]
+    }))
+  }
+
   render() {
     const exercises = this.getExercisesByMuscle();
     const { category, selectedExercise } = this.state;
@@ -59,9 +76,14 @@ export default class extends Component {
       <Exercises
         exercises={exercises}
         category={this.state.category}
+        selectedExercise={selectedExercise}
+        editMode={this.state.editMode}
+        muscles={muscles}
         onExerciseSelected={this.handleExerciseChange}
         onExerciseDeleted={this.handleExerciseDelete}
-        selectedExercise={selectedExercise} />
+        onExerciseEdited={this.handleExerciseEdit}
+        onEdit={this.handleEdit}
+      />
 
       <Footer muscles={muscles}
         onSelect={this.handleCategoryChange}
