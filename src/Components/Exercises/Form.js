@@ -41,16 +41,10 @@ export default withStyles(styles)(class extends Component {
     handleSubmit = () => {
         console.log("in handle submiit");
         this.props.onSubmit({
-            title: this.state.title,
-            description: this.state.description,
-            muscles: this.state.muscles,
-            id: this.state.title.toLowerCase().replace(/ /g, '-')
+            id: this.state.title.toLowerCase().replace(/ /g, '-'),
+            ...this.state
         });
-        this.setState({
-            title: '',
-            description: '',
-            muscles: ''
-        });
+        this.setState(this.getInitialState());
         const { postSubmitTask } = this.props;
         if (postSubmitTask) {
             postSubmitTask();
