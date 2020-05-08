@@ -18,13 +18,13 @@ export default ({ styles, exercise, editMode, muscles, onSubmit }) => {
         : <Fragment>
             <Paper className={styles}>
                 <Typography
-                    variant="h5">
+                    variant="h5"
+                    gutterBottom>
                     {title}
                 </Typography>
 
                 <Typography
-                    variant="body1"
-                    style={{ marginTop: 20 }}>
+                    variant="body1">
                     {description}
                 </Typography>
             </Paper>
