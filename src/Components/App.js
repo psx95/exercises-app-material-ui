@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Header, Footer } from './Layouts';
 import Exercises from './Exercises';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import { muscles, exercises } from '../store';
 
 export default class extends Component {
@@ -72,7 +73,9 @@ export default class extends Component {
   render() {
     const exercises = this.getExercisesByMuscle();
     const { category, selectedExercise } = this.state;
+    // CSS Baseline removes default margins added by the browsers
     return <Fragment>
+      <CssBaseline />
       <Header
         muscles={muscles}
         createExercise={this.handleExerciseCreate} />
