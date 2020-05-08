@@ -11,7 +11,7 @@ import {
 import { Delete, Edit } from '@material-ui/icons';
 
 export default ({ styles, data, category, onSelect, onDelete, onEdit }) =>
-    <Paper style={styles}>
+    <Paper className={styles}>
         {data.map(([group, exercises]) =>
             !category || category === group ?
                 <Fragment

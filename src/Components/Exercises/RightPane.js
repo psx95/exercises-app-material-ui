@@ -12,7 +12,7 @@ export default ({ styles, exercise, editMode, muscles, onSubmit }) => {
             onSubmit={onSubmit}
             exercise={exercise} />
         : <Fragment>
-            <Paper style={styles}>
+            <Paper className={styles}>
                 <Typography
                     variant="h5">
                     {title}
