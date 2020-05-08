@@ -9,6 +9,7 @@ export default ({ styles, exercise, editMode, muscles, onSubmit }) => {
 
     return <Paper className={styles}>
         <Typography
+            color="secondary"
             variant="h5"
             gutterBottom>
             {title}
