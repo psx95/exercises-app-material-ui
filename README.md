@@ -1,3 +1,8 @@
+# Exercise Database
+
+A simple web app created using React.js & Material UI framework that performs basic CRUD operations. 
+This app was made as an attempt to learn using the [Material-UI](https://material-ui.com/) framework with a react application. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
