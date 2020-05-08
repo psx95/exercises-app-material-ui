@@ -9,7 +9,7 @@ const styles = {
 
 export default ({ exercises, category, onExerciseSelected, onExerciseDeleted, selectedExercise, editMode, muscles, onExerciseEdited, onEdit }) =>
     <Grid container>
-        <Grid item sm>
+        <Grid item sm={6} xs={12}>
             <LeftPane
                 styles={styles.Paper}
                 data={exercises}
@@ -18,7 +18,7 @@ export default ({ exercises, category, onExerciseSelected, onExerciseDeleted, se
                 onSelect={onExerciseSelected}
                 onDelete={onExerciseDeleted} />
         </Grid>
-        <Grid item sm>
+        <Grid item sm={6} xs={12}>
             <RightPane styles={styles.Paper}
                 exercise={selectedExercise}
                 editMode={editMode}
