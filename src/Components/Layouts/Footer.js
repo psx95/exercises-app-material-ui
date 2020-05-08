@@ -28,7 +28,7 @@ export default ({ muscles, onSelect, category }) => {
         onSelect(index === 0 ? '' : muscles[index - 1]);
     }
 
-    return <AppBar position="static">
+    return <AppBar position="fixed" style={{ top: 'auto', bottom: 0 }}>
         <Tabs
             value={index}
             onChange={onIndexSelected}
