@@ -8,7 +8,9 @@ export default ({ styles, exercise, editMode, muscles, onSubmit }) => {
     const description = !isExerciseEmpty ? exercise.description : "Please select an execise from the list on the left";
 
     return editMode ?
-        <Form categories={muscles}
+        <Form
+            key={exercise.id}
+            categories={muscles}
             onSubmit={onSubmit}
             exercise={exercise} />
         : <Fragment>

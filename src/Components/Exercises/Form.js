@@ -30,14 +30,6 @@ export default withStyles(styles)(class extends Component {
         }
     }
 
-    // Using this lifecycle method we manually update out state whenever the props received by this 
-    // component updates.
-    componentWillReceiveProps({ exercise }) {
-        this.setState({
-            ...exercise
-        });
-    }
-
     handleExerciseChange = name => event => {
         this.setState({
             [name]: event.target.value
@@ -50,7 +42,6 @@ export default withStyles(styles)(class extends Component {
             id: this.state.title.toLowerCase().replace(/ /g, '-'),
             ...this.state
         });
-        this.setState(this.getInitialState());
         const { postSubmitTask } = this.props;
         if (postSubmitTask) {
             postSubmitTask();
