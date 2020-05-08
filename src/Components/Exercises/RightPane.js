@@ -7,26 +7,23 @@ export default ({ styles, exercise, editMode, muscles, onSubmit }) => {
     const title = !isExerciseEmpty ? exercise.title : "Welcome!";
     const description = !isExerciseEmpty ? exercise.description : "Please select an execise from the list on the left";
 
-    return editMode ?
-        <Paper className={styles}>
+    return <Paper className={styles}>
+        <Typography
+            variant="h5"
+            gutterBottom>
+            {title}
+        </Typography>
+        {editMode ?
             <Form
                 key={exercise.id}
                 categories={muscles}
                 onSubmit={onSubmit}
                 exercise={exercise} />
-        </Paper>
-        : <Fragment>
-            <Paper className={styles}>
-                <Typography
-                    variant="h5"
-                    gutterBottom>
-                    {title}
-                </Typography>
-
-                <Typography
-                    variant="body1">
-                    {description}
-                </Typography>
-            </Paper>
-        </Fragment>
+            :
+            <Typography
+                variant="body1">
+                {description}
+            </Typography>
+        }
+    </Paper>
 }
