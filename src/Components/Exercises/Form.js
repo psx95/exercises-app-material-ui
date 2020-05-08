@@ -91,7 +91,11 @@ export default withStyles(styles)(class extends Component {
                 className={classes.FormControl}
                 margin="normal" />
             <br />
-            <Button color="primary" variant="contained" onClick={this.handleSubmit}>
+            <Button
+                color="primary"
+                variant="contained"
+                onClick={this.handleSubmit}
+                disabled={!title || !muscles}>
                 {buttonText}
             </Button>
         </form>
