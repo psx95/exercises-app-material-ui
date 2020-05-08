@@ -24,6 +24,8 @@ export default class extends Component {
                 <AddIcon />
             </Fab>
             <Dialog
+                fullWidth
+                maxWidth='sm'
                 open={open}
                 onClose={this.handleToggle}
                 aria-labelledby="form-dialog-title">

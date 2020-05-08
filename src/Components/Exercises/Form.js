@@ -1,20 +1,7 @@
 import React, { Component } from 'react'
 import { TextField, FormControl, MenuItem, InputLabel, Select, Button } from '@material-ui/core'
-import { withStyles } from '@material-ui/core/styles'
 
-const styles = theme => ({
-    FormControl: {
-        width: 500,
-        [theme.breakpoints.only('xs')]: {
-            width: 250
-        },
-        [theme.breakpoints.only('sm')]: {
-            width: 350
-        }
-    }
-});
-
-export default withStyles(styles)(class extends Component {
+export default class extends Component {
     state = this.getInitialState();
 
     getInitialState() {
@@ -50,19 +37,19 @@ export default withStyles(styles)(class extends Component {
 
     render() {
         const { title, description, muscles } = this.state;
-        const { classes, categories, exercise } = this.props;
+        const { categories, exercise } = this.props;
         const buttonText = exercise ? "Update" : "Create";
 
         return <form>
             <TextField
+                fullWidth
                 required
                 label="Title"
                 value={title}
                 onChange={this.handleExerciseChange('title')}
-                className={classes.FormControl}
                 margin="normal" />
             <br />
-            <FormControl className={classes.FormControl}>
+            <FormControl fullWidth>
                 <InputLabel htmlFor="muscles">Muscles</InputLabel>
                 <Select
                     required
@@ -82,13 +69,13 @@ export default withStyles(styles)(class extends Component {
             </FormControl>
             <br />
             <TextField
+                fullWidth
                 required
                 multiline
                 label="Description"
                 rows="4"
                 value={description}
                 onChange={this.handleExerciseChange('description')}
-                className={classes.FormControl}
                 margin="normal" />
             <br />
             <Button
@@ -100,4 +87,4 @@ export default withStyles(styles)(class extends Component {
             </Button>
         </form>
     }
-})
+}
