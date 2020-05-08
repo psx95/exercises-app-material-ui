@@ -1,5 +1,5 @@
 import React from 'react';
-import { Paper, Tabs, Tab } from '@material-ui/core';
+import { AppBar, Tabs, Tab } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
 
@@ -28,12 +28,12 @@ export default ({ muscles, onSelect, category }) => {
         onSelect(index === 0 ? '' : muscles[index - 1]);
     }
 
-    return <Paper>
+    return <AppBar position="static">
         <Tabs
             value={index}
             onChange={onIndexSelected}
-            indicatorColor="primary"
-            textColor="primary"
+            indicatorColor="secondary"
+            textColor="secondary"
             centered={width !== 'xs' && width !== 'sm'}
             variant={width === 'xs' || width === 'sm' ? "scrollable" : "standard"}
         >
@@ -42,5 +42,5 @@ export default ({ muscles, onSelect, category }) => {
                 <Tab key={group} label={group} />
             )}
         </Tabs>
-    </Paper>
+    </AppBar>
 }    
