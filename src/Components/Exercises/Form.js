@@ -4,7 +4,13 @@ import { withStyles } from '@material-ui/core/styles'
 
 const styles = theme => ({
     FormControl: {
-        width: 500
+        width: 500,
+        [theme.breakpoints.only('xs')]: {
+            width: 250
+        },
+        [theme.breakpoints.only('sm')]: {
+            width: 350
+        }
     }
 });
 
