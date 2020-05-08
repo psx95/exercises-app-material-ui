@@ -1,7 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import { Dialog, DialogTitle, DialogContent, DialogContentText, Fab } from '@material-ui/core'
 import AddIcon from '@material-ui/icons/Add'
-import Form from '../Form'
+import Form from './Form'
 
 export default class extends Component {
     state = {
