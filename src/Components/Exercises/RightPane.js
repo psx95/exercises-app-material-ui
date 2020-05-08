@@ -3,8 +3,9 @@ import { Paper, Typography } from '@material-ui/core';
 import Form from './Form';
 
 export default ({ styles, exercise, editMode, muscles, onSubmit }) => {
-    const title = exercise ? exercise.title : "Welcome!";
-    const description = exercise ? exercise.description : "Please select an execise from the list on the left";
+    const isExerciseEmpty = !exercise || Object.keys(exercise).length === 0;
+    const title = !isExerciseEmpty ? exercise.title : "Welcome!";
+    const description = !isExerciseEmpty ? exercise.description : "Please select an execise from the list on the left";
 
     return editMode ?
         <Form categories={muscles}
