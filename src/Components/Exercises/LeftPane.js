@@ -16,8 +16,10 @@ export default ({ styles, data, category, onSelect, onDelete, onEdit }) =>
             !category || category === group ?
                 <Fragment
                     key={group}>
-                    <Typography style={{ textTransform: 'capitalize' }}
-                        variant='body1'>
+                    <Typography
+                        style={{ textTransform: 'capitalize' }}
+                        variant='body1'
+                        color="secondary">
                         {group}
                     </Typography>
                     <List component="ul">
@@ -28,10 +30,10 @@ export default ({ styles, data, category, onSelect, onDelete, onEdit }) =>
                                 button>
                                 <ListItemText primary={title} />
                                 <ListItemSecondaryAction>
-                                    <IconButton>
+                                    <IconButton color="primary">
                                         <Edit onClick={() => onEdit(id)} />
                                     </IconButton>
-                                    <IconButton>
+                                    <IconButton color="primary">
                                         <Delete onClick={() => onDelete(id)} />
                                     </IconButton>
                                 </ListItemSecondaryAction>
